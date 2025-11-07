@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --dourado-sacra: #C9A961;
+    --dourado-claro: #E5D4A1;
+    --dourado-escuro: #A68B3D;
+    --azul-profundo: #1A3A5C;
+    --azul-medio: #2D5A7F;
+    --azul-claro: #4A90A4;
+    --off-white: #F8F7F4;
+    --marrom-claro: #8B7355;
+    --branco-puro: #FFFFFF;
+    
+    --container-max: 1200px;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-texto text-gray-900 antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-titulo text-azul-profundo;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-screen-xl mx-auto px-4 md:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .text-hero {
+    @apply font-titulo text-h1 leading-tight font-bold text-azul-profundo;
+    letter-spacing: -0.02em;
+  }
+  
+  .text-section {
+    @apply font-titulo text-h2 leading-tight font-semibold text-azul-profundo;
+  }
+  
+  .text-body {
+    @apply font-texto text-lg leading-relaxed text-gray-900;
+  }
+  
+  .btn-primary {
+    @apply bg-dourado-sacra text-white px-6 py-3 rounded transition-all duration-300 font-semibold;
+    @apply hover:bg-dourado-escuro hover:-translate-y-0.5 hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent text-azul-profundo px-6 py-3 rounded border-2 border-azul-profundo transition-all duration-300 font-semibold;
+    @apply hover:bg-azul-profundo hover:text-white;
+  }
+  
+  .btn-text {
+    @apply text-azul-profundo font-semibold transition-all duration-300 border-b-2 border-transparent;
+    @apply hover:text-dourado-sacra hover:border-dourado-sacra;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300;
+    @apply hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  .card-image {
+    @apply w-full h-60 object-cover;
+  }
+  
+  .card-content {
+    @apply p-6;
+  }
+  
+  .card-title {
+    @apply font-titulo text-h4 font-semibold text-azul-profundo mb-3;
+  }
+  
+  .card-excerpt {
+    @apply font-texto text-base leading-relaxed text-gray-600 mb-4;
+  }
+}
+
+@layer utilities {
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animação de blob flutuante */
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(20px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  75% {
+    transform: translate(30px, 10px) scale(1.05);
+  }
+}
+
+.animate-blob {
+  animation: blob 20s infinite ease-in-out;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+/* Efeito de brilho pulsante */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s infinite linear;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  background-size: 1000px 100%;
+}
+

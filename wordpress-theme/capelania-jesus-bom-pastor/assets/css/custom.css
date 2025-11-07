@@ -1,0 +1,302 @@
+/**
+ * Custom CSS para o tema Capelania Jesus Bom Pastor
+ * 
+ * Variáveis CSS para fácil customização
+ */
+
+:root {
+    /* Cores Primárias */
+    --cor-primaria: #1e3a8a;
+    --cor-secundaria: #d97706;
+    --cor-acento: #059669;
+    --cor-texto: #1f2937;
+    --cor-texto-claro: #6b7280;
+    --cor-fundo: #ffffff;
+    --cor-borda: #e5e7eb;
+    
+    /* Tipografia */
+    --fonte-titulo: 'Montserrat', sans-serif;
+    --fonte-texto: 'Inter', sans-serif;
+    --tamanho-base: 16px;
+    --altura-linha: 1.6;
+    
+    /* Espaçamento */
+    --espacamento-xs: 0.5rem;
+    --espacamento-sm: 1rem;
+    --espacamento-md: 2rem;
+    --espacamento-lg: 3rem;
+    --espacamento-xl: 4rem;
+    
+    /* Breakpoints */
+    --breakpoint-mobile: 768px;
+    --breakpoint-tablet: 1024px;
+    --breakpoint-desktop: 1200px;
+    
+    /* Transições */
+    --transicao-padrao: 0.3s ease;
+}
+
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    font-size: var(--tamanho-base);
+    line-height: var(--altura-linha);
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
+
+/* Tipografia */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--espacamento-sm);
+    color: var(--cor-primaria);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+    margin-bottom: var(--espacamento-sm);
+}
+
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: var(--transicao-padrao);
+}
+
+a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Container */
+.container {
+    max-width: var(--breakpoint-desktop);
+    margin: 0 auto;
+    padding: 0 var(--espacamento-sm);
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 var(--espacamento-md);
+    }
+}
+
+/* Carrossel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: var(--espacamento-lg);
+    text-align: center;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: var(--espacamento-sm);
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: var(--transicao-padrao);
+}
+
+.carousel-controls:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.carousel-controls.prev {
+    left: var(--espacamento-sm);
+}
+
+.carousel-controls.next {
+    right: var(--espacamento-sm);
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: var(--espacamento-md);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--espacamento-xs);
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+.carousel-indicator.active {
+    background: white;
+}
+
+/* Cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacamento-md);
+    margin: var(--espacamento-md) 0;
+}
+
+@media (min-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card {
+    background: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transicao-padrao);
+}
+
+.card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: var(--espacamento-md);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: var(--espacamento-xs);
+}
+
+.card-excerpt {
+    color: var(--cor-texto-claro);
+    margin-bottom: var(--espacamento-sm);
+}
+
+.card-link {
+    display: inline-block;
+    color: var(--cor-primaria);
+    font-weight: 600;
+}
+
+.card-link:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+}
+
+.btn-primary {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1e40af;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: var(--cor-secundaria);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #b45309;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 767px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    
+    .carousel-container {
+        height: 300px;
+    }
+    
+    .container {
+        padding: 0 var(--espacamento-sm);
+    }
+}
+
+/* Utilitários */
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: var(--espacamento-sm); }
+.mt-2 { margin-top: var(--espacamento-md); }
+.mt-3 { margin-top: var(--espacamento-lg); }
+
+.mb-1 { margin-bottom: var(--espacamento-sm); }
+.mb-2 { margin-bottom: var(--espacamento-md); }
+.mb-3 { margin-bottom: var(--espacamento-lg); }
+

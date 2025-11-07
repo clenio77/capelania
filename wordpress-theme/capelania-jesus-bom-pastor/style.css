@@ -1,0 +1,26 @@
+<?php
+/**
+ * Theme Name: Capelania Jesus Bom Pastor
+ * Theme URI: https://capelania.com
+ * Description: Tema customizado para o Portal da Capelania Jesus Bom Pastor
+ * Author: Capelania Team
+ * Version: 1.0.0
+ * Text Domain: capelania
+ */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+// Definições do tema
+define('CAPELANIA_VERSION', '1.0.0');
+define('CAPELANIA_THEME_DIR', get_template_directory());
+define('CAPELANIA_THEME_URI', get_template_directory_uri());
+
+// Incluir arquivos de configuração
+require_once CAPELANIA_THEME_DIR . '/inc/custom-post-types.php';
+require_once CAPELANIA_THEME_DIR . '/inc/custom-taxonomies.php';
+require_once CAPELANIA_THEME_DIR . '/inc/custom-fields.php';
+require_once CAPELANIA_THEME_DIR . '/inc/theme-setup.php';
+require_once CAPELANIA_THEME_DIR . '/inc/enqueue-scripts.php';
+
