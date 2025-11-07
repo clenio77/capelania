@@ -8,6 +8,7 @@ import UpcomingEventsSection from '@/components/sections/UpcomingEventsSection'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 import CommunityEngagementSection from '@/components/sections/CommunityEngagementSection'
 import StatsSection from '@/components/sections/StatsSection'
+import CalendarSection from '@/components/sections/CalendarSection'
 
 export default async function Home() {
   const [comunidades, noticias, eventos] = await Promise.all([
@@ -90,6 +91,8 @@ export default async function Home() {
       </AnimatedSection>
 
       <UpcomingEventsSection eventos={proximosEventos} />
+
+      <CalendarSection eventos={eventos} />
 
       {/* Comunidades */}
       {comunidades.length > 0 && (
