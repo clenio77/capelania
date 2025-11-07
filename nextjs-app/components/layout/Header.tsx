@@ -10,7 +10,7 @@ export default function Header() {
           <Link href="/" className="group h-full block">
             <div className="relative h-full w-auto aspect-[4/3] flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
               <Image
-                src="/images/jesus-bom-pastor.jpg"
+                src="/images/jesus-bom-pastor.png"
                 alt="Capelania Jesus Bom Pastor"
                 fill
                 className="object-contain"
