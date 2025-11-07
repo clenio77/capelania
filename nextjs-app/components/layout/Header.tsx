@@ -6,14 +6,16 @@ import Image from 'next/image'
 import { Search } from 'lucide-react'
 import Navigation from './Navigation'
 import SearchModal from '@/components/ui/SearchModal'
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher'
+import { useTranslations } from '@/hooks/useTranslations'
 
 export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const t = useTranslations('common')
 
-  // Atalho de teclado Ctrl+K
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault()
         setIsSearchOpen(true)
       }
@@ -25,12 +27,11 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white shadow-md backdrop-blur-sm bg-white/98 border-b border-gray-200">
+      <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/98 shadow-md backdrop-blur-sm">
         <div className="container-custom">
-          <div className="flex items-center justify-between h-20 py-3">
-            {/* Logo */}
-            <Link href="/" className="group flex-shrink-0">
-              <div className="relative h-14 w-auto aspect-[4/3] transition-transform duration-300 group-hover:scale-105">
+          <div className="flex h-20 items-center justify-between py-3">
+            <Link href="/" className="group flex-shrink-0" aria-label="Capelania Jesus Bom Pastor">
+              <div className="relative aspect-[4/3] h-14 w-auto transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src="/images/jesus-bom-pastor.png"
                   alt="Capelania Jesus Bom Pastor"
@@ -41,18 +42,18 @@ export default function Header() {
               </div>
             </Link>
 
-            {/* Navigation + Search */}
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4 md:gap-6">
               <Navigation />
-              
-              {/* Search Icon Button */}
+
+              <LanguageSwitcher />
+
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="p-2 rounded-full hover:bg-gray-100 transition-colors group"
-                aria-label="Buscar"
-                title="Buscar (Ctrl+K)"
+                className="rounded-full p-2 transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dourado-sacra"
+                aria-label={t('search')}
+                title={`${t('search')} (Ctrl+K)`}
               >
-                <Search className="h-5 w-5 text-gray-600 group-hover:text-dourado-sacra transition-colors" />
+                <Search className="h-5 w-5 text-gray-600 transition-colors group-hover:text-dourado-sacra" />
               </button>
             </div>
           </div>
@@ -63,4 +64,3 @@ export default function Header() {
     </>
   )
 }
-

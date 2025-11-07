@@ -2,33 +2,33 @@
 
 import { useState } from 'react'
 import { Mail, CheckCircle2, AlertCircle, Send } from 'lucide-react'
+import { useTranslations } from '@/hooks/useTranslations'
 
 interface NewsletterFormProps {
   variant?: 'default' | 'compact' | 'inline'
   showTitle?: boolean
 }
 
-export default function NewsletterForm({ 
+export default function NewsletterForm({
   variant = 'default',
-  showTitle = true 
+  showTitle = true,
 }: NewsletterFormProps) {
   const [email, setEmail] = useState('')
   const [nome, setNome] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [message, setMessage] = useState('')
+  const t = useTranslations('newsletter')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('loading')
 
     try {
-      // Simula envio (integrar com backend/Mailchimp/etc)
-      await new Promise(resolve => setTimeout(resolve, 1500))
-      
+      await new Promise((resolve) => setTimeout(resolve, 1500))
+
       setStatus('success')
-      setMessage('Inscrição realizada com sucesso! Verifique seu email.')
-      
-      // Limpa formulário após 3 segundos
+      setMessage(t('success'))
+
       setTimeout(() => {
         setEmail('')
         setNome('')
@@ -37,7 +37,7 @@ export default function NewsletterForm({
       }, 3000)
     } catch (error) {
       setStatus('error')
-      setMessage('Erro ao realizar inscrição. Tente novamente.')
+      setMessage(t('error'))
       setTimeout(() => {
         setStatus('idle')
         setMessage('')
@@ -45,66 +45,62 @@ export default function NewsletterForm({
     }
   }
 
-  // Variante Compact (para footer)
   if (variant === 'compact') {
     return (
       <div className="max-w-md">
         {showTitle && (
           <div className="mb-4">
-            <h3 className="font-bold text-lg mb-2">Receba nossas novidades</h3>
-            <p className="text-sm text-gray-600">
-              Cadastre-se e receba atualizações da capelania
-            </p>
+            <h3 className="mb-2 text-lg font-bold">{t('compactTitle')}</h3>
+            <p className="text-sm text-gray-600">{t('compactDescription')}</p>
           </div>
         )}
-        
+
         <form onSubmit={handleSubmit} className="space-y-3">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Seu email"
+            placeholder={t('inlinePlaceholder')}
             required
             disabled={status === 'loading'}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-azul-profundo focus:border-transparent transition-all disabled:opacity-50"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 transition-all focus:border-transparent focus:ring-2 focus:ring-azul-profundo disabled:opacity-50"
           />
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="w-full bg-azul-profundo text-white py-3 px-4 rounded-lg font-semibold hover:bg-azul-profundo/90 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+            className="flex w-full items-center justify-center gap-2 rounded-lg bg-azul-profundo py-3 px-4 font-semibold text-white transition-all hover:bg-azul-profundo/90 disabled:opacity-50"
           >
             {status === 'loading' ? (
               <>
-                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                Cadastrando...
+                <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                {t('submitting')}
               </>
             ) : (
               <>
-                <Mail className="w-5 h-5" />
-                Cadastrar
+                <Mail className="h-5 w-5" />
+                {t('submit')}
               </>
             )}
           </button>
         </form>
 
         {status === 'success' && (
-          <div className="mt-3 p-3 bg-green-50 border border-green-200 rounded-lg flex items-start gap-2">
-            <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-            <p className="text-green-800 text-sm">{message}</p>
+          <div className="mt-3 flex items-start gap-2 rounded-lg border border-green-200 bg-green-50 p-3">
+            <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-600" />
+            <p className="text-sm text-green-800">{message}</p>
           </div>
         )}
 
         {status === 'error' && (
-          <div className="mt-3 p-3 bg-red-50 border border-red-200 rounded-lg flex items-start gap-2">
-            <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-            <p className="text-red-800 text-sm">{message}</p>
+          <div className="mt-3 flex items-start gap-2 rounded-lg border border-red-200 bg-red-50 p-3">
+            <AlertCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-600" />
+            <p className="text-sm text-red-800">{message}</p>
           </div>
         )}
       </div>
     )
   }
 
-  // Variante Inline (horizontal)
   if (variant === 'inline') {
     return (
       <div>
@@ -113,131 +109,129 @@ export default function NewsletterForm({
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Digite seu email"
+            placeholder={t('inlinePlaceholder')}
             required
             disabled={status === 'loading'}
-            className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-azul-profundo focus:border-transparent transition-all disabled:opacity-50"
+            className="flex-1 rounded-lg border border-gray-300 px-4 py-3 transition-all focus:border-transparent focus:ring-2 focus:ring-azul-profundo disabled:opacity-50"
           />
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="bg-azul-profundo text-white px-6 py-3 rounded-lg font-semibold hover:bg-azul-profundo/90 transition-all flex items-center gap-2 disabled:opacity-50 whitespace-nowrap"
+            className="flex items-center gap-2 whitespace-nowrap rounded-lg bg-azul-profundo px-6 py-3 font-semibold text-white transition-all hover:bg-azul-profundo/90 disabled:opacity-50"
           >
             {status === 'loading' ? (
-              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
             ) : (
               <>
-                <Send className="w-5 h-5" />
-                Cadastrar
+                <Send className="h-5 w-5" />
+                {t('submit')}
               </>
             )}
           </button>
         </form>
 
         {status === 'success' && (
-          <div className="mt-3 p-3 bg-green-50 border border-green-200 rounded-lg flex items-start gap-2">
-            <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-            <p className="text-green-800 text-sm">{message}</p>
+          <div className="mt-3 flex items-start gap-2 rounded-lg border border-green-200 bg-green-50 p-3">
+            <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-600" />
+            <p className="text-sm text-green-800">{message}</p>
           </div>
         )}
 
         {status === 'error' && (
-          <div className="mt-3 p-3 bg-red-50 border border-red-200 rounded-lg flex items-start gap-2">
-            <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-            <p className="text-red-800 text-sm">{message}</p>
+          <div className="mt-3 flex items-start gap-2 rounded-lg border border-red-200 bg-red-50 p-3">
+            <AlertCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-600" />
+            <p className="text-sm text-red-800">{message}</p>
           </div>
         )}
       </div>
     )
   }
 
-  // Variante Default (completa)
   return (
-    <div className="max-w-md mx-auto">
+    <div className="mx-auto max-w-md">
       {showTitle && (
-        <div className="text-center mb-6">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-azul-profundo/10 mb-4">
-            <Mail className="w-8 h-8 text-azul-profundo" />
+        <div className="mb-6 text-center">
+          <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-azul-profundo/10">
+            <Mail className="h-8 w-8 text-azul-profundo" />
           </div>
-          <h2 className="text-2xl font-bold text-azul-profundo mb-2">
-            Receba Nossas Novidades
+          <h2 className="mb-2 text-2xl font-bold text-azul-profundo">
+            {t('title')}
           </h2>
           <p className="text-gray-600">
-            Cadastre-se para receber boletins, convites para eventos e atualizações da capelania
+            {t('description')}
           </p>
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4 rounded-2xl border border-gray-100 bg-white p-8 shadow-xl">
         {status === 'success' && (
-          <div className="p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-            <p className="text-green-800 text-sm">{message}</p>
+          <div className="flex items-start gap-3 rounded-lg border border-green-200 bg-green-50 p-4">
+            <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-600" />
+            <p className="text-sm text-green-800">{message}</p>
           </div>
         )}
 
         {status === 'error' && (
-          <div className="p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
-            <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-            <p className="text-red-800 text-sm">{message}</p>
+          <div className="flex items-start gap-3 rounded-lg border border-red-200 bg-red-50 p-4">
+            <AlertCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-600" />
+            <p className="text-sm text-red-800">{message}</p>
           </div>
         )}
 
         <div>
-          <label htmlFor="nome-newsletter" className="block text-sm font-semibold text-gray-700 mb-2">
-            Nome
+          <label htmlFor="nome-newsletter" className="mb-2 block text-sm font-semibold text-gray-700">
+            {t('nameLabel')}
           </label>
           <input
             type="text"
             id="nome-newsletter"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
-            placeholder="Seu nome"
+            placeholder={t('namePlaceholder')}
             required
             disabled={status === 'loading'}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-azul-profundo focus:border-transparent transition-all disabled:opacity-50"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 transition-all focus:border-transparent focus:ring-2 focus:ring-azul-profundo disabled:opacity-50"
           />
         </div>
 
         <div>
-          <label htmlFor="email-newsletter" className="block text-sm font-semibold text-gray-700 mb-2">
-            Email
+          <label htmlFor="email-newsletter" className="mb-2 block text-sm font-semibold text-gray-700">
+            {t('emailLabel')}
           </label>
           <input
             type="email"
             id="email-newsletter"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="seu@email.com"
+            placeholder={t('emailPlaceholder')}
             required
             disabled={status === 'loading'}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-azul-profundo focus:border-transparent transition-all disabled:opacity-50"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 transition-all focus:border-transparent focus:ring-2 focus:ring-azul-profundo disabled:opacity-50"
           />
         </div>
 
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="w-full bg-azul-profundo text-white py-4 px-6 rounded-lg font-semibold hover:bg-azul-profundo/90 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+          className="flex w-full items-center justify-center gap-2 rounded-lg bg-azul-profundo py-4 px-6 font-semibold text-white transition-all hover:bg-azul-profundo/90 disabled:opacity-50"
         >
           {status === 'loading' ? (
             <>
-              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-              Cadastrando...
+              <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
+              {t('submitting')}
             </>
           ) : (
             <>
-              <Send className="w-5 h-5" />
-              Cadastrar Agora
+              <Send className="h-5 w-5" />
+              {t('submitNow')}
             </>
           )}
         </button>
 
-        <p className="text-xs text-gray-500 text-center">
-          Seus dados são seguros e você pode cancelar a inscrição a qualquer momento.
+        <p className="text-center text-xs text-gray-500">
+          {t('privacy')}
         </p>
       </form>
     </div>
   )
 }
-

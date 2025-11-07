@@ -14,16 +14,16 @@ export const siteConfig = {
 
 // Menu de navegação
 export const navigation = [
-  { name: 'Início', href: '/' },
-  { name: 'A Capelania', href: '/a-capelania' },
-  { name: 'Comunidades', href: '/comunidades' },
-  { name: 'Celebrações', href: '/celebracaoes' },
-  { name: 'Notícias', href: '/noticias' },
-  { name: 'Pastorais', href: '/pastorais' },
-  { name: 'Boletins', href: '/boletins' },
-  { name: 'Pedidos de Oração', href: '/pedidos-oracao' },
-  { name: 'Contribua', href: '/contribua' },
-  { name: 'Fale Conosco', href: '/fale-conosco' },
+  { labelKey: 'home', href: '/' },
+  { labelKey: 'about', href: '/a-capelania' },
+  { labelKey: 'communities', href: '/comunidades' },
+  { labelKey: 'celebrations', href: '/celebracaoes' },
+  { labelKey: 'news', href: '/noticias' },
+  { labelKey: 'pastorals', href: '/pastorais' },
+  { labelKey: 'bulletins', href: '/boletins' },
+  { labelKey: 'prayerRequests', href: '/pedidos-oracao' },
+  { labelKey: 'contribute', href: '/contribua' },
+  { labelKey: 'contact', href: '/fale-conosco' },
 ]
 
 // Informações de contato
@@ -76,4 +76,3 @@ export const faqs = [
       'Temos ações junto a famílias em vulnerabilidade, visitas a hospitais e apoio educacional para crianças. Toda ajuda é bem-vinda!',
   },
 ]
-
