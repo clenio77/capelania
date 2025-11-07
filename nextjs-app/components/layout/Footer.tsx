@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { navigation, contactInfo } from '@/config/site'
+import NewsletterForm from '@/components/forms/NewsletterForm'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -8,12 +9,9 @@ export default function Footer() {
     <footer className="bg-azul-profundo text-white">
       <div className="container-custom py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Sobre */}
-          <div>
-            <h3 className="font-titulo text-xl font-semibold mb-4">Capelania Jesus Bom Pastor</h3>
-            <p className="text-gray-300 leading-relaxed">
-              Portal oficial da Capelania Jesus Bom Pastor. Conectando fiéis e comunidades.
-            </p>
+          {/* Newsletter */}
+          <div className="md:col-span-1">
+            <NewsletterForm variant="compact" showTitle={true} />
           </div>
 
           {/* Links Rápidos */}

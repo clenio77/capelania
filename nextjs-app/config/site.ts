@@ -20,6 +20,7 @@ export const navigation = [
   { name: 'Celebrações', href: '/celebracaoes' },
   { name: 'Notícias', href: '/noticias' },
   { name: 'Pastorais', href: '/pastorais' },
+  { name: 'Boletins', href: '/boletins' },
   { name: 'Pedidos de Oração', href: '/pedidos-oracao' },
   { name: 'Contribua', href: '/contribua' },
   { name: 'Fale Conosco', href: '/fale-conosco' },
