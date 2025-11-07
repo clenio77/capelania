@@ -8,9 +8,11 @@ Erro: Nenhuma versão do Next.js detectada.
 
 **Causa**: A Vercel está tentando fazer build na raiz do projeto, mas o Next.js está em `nextjs-app/`.
 
-## ✅ Solução
+## ✅ Solução: Configure o Root Directory na Vercel
 
-### Opção 1: Configurar na Interface da Vercel (Recomendado)
+**IMPORTANTE**: A única forma que funciona é configurar manualmente na interface da Vercel.
+
+### Passo a Passo:
 
 1. **Acesse o projeto na Vercel**
    - Vá em: https://vercel.com/dashboard
@@ -31,22 +33,20 @@ Erro: Nenhuma versão do Next.js detectada.
    - Clique nos três pontos do último deploy
    - Clique em **Redeploy**
 
-### Opção 2: Arquivo vercel.json (Alternativa)
+### 🎯 Screenshot da Configuração:
 
-Crie um arquivo `vercel.json` na raiz do projeto:
-
-```json
-{
-  "buildCommand": "cd nextjs-app && npm install && npm run build",
-  "outputDirectory": "nextjs-app/.next",
-  "devCommand": "cd nextjs-app && npm run dev",
-  "installCommand": "cd nextjs-app && npm install",
-  "framework": "nextjs",
-  "regions": ["iad1"]
-}
+```
+┌─────────────────────────────────────────┐
+│ Root Directory                          │
+│ ┌─────────────────────────────────────┐ │
+│ │ nextjs-app                          │ │
+│ └─────────────────────────────────────┘ │
+│                                         │
+│ [Save]                                  │
+└─────────────────────────────────────────┘
 ```
 
-Mas a **Opção 1 é mais simples e recomendada**.
+**NÃO use arquivo `vercel.json` - ele não funciona corretamente para este caso.**
 
 ## 📋 Configurações Corretas na Vercel
 
