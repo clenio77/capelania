@@ -85,6 +85,40 @@
       scroll-behavior: auto !important;
     }
   }
+
+  /* Responsive Typography */
+  @media (max-width: 768px) {
+    h1 {
+      @apply text-h1-mobile;
+    }
+    h2 {
+      @apply text-h2-mobile;
+    }
+    h3 {
+      @apply text-h3-mobile;
+    }
+  }
+
+  /* Touch-friendly tap targets */
+  @media (max-width: 1024px) {
+    button,
+    a,
+    input,
+    select,
+    textarea {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+
+  /* Improved text rendering on small screens */
+  @media (max-width: 640px) {
+    body {
+      font-size: 16px; /* Prevent zoom on iOS */
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+  }
 }
 
 @layer components {
