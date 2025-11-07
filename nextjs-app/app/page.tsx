@@ -9,6 +9,7 @@ import TestimonialsSection from '@/components/sections/TestimonialsSection'
 import CommunityEngagementSection from '@/components/sections/CommunityEngagementSection'
 import StatsSection from '@/components/sections/StatsSection'
 import CalendarSection from '@/components/sections/CalendarSection'
+import ChaplainMessageSection from '@/components/sections/ChaplainMessageSection'
 
 export default async function Home() {
   const [comunidades, noticias, eventos] = await Promise.all([
@@ -47,23 +48,7 @@ export default async function Home() {
 
       <StatsSection />
 
-      {/* Mensagem do Pároco */}
-      <AnimatedSection delay={0.2}>
-        <section className="section-padding bg-off-white">
-          <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-section mb-6">Mensagem do Pároco</h2>
-              <div className="prose prose-lg max-w-none">
-                <p className="text-body text-gray-700">
-                  Bem-vindos ao portal da Capelania Jesus Bom Pastor. Este é um espaço de encontro,
-                  de comunhão e de crescimento na fé. Que possamos juntos construir uma comunidade
-                  cada vez mais unida e comprometida com o Evangelho.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
+      <ChaplainMessageSection />
 
       {/* Últimas Notícias */}
       <AnimatedSection delay={0.4}>
