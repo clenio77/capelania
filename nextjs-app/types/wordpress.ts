@@ -32,6 +32,11 @@ export interface Comunidade extends WordPressPost {
     email?: string
     coordenadas_gps?: string
     galeria_fotos?: string[]
+    banner?: string
+    logo?: string
+    logotipo?: string
+    responsavel?: string
+    descricao?: string
   }
 }
 
@@ -39,10 +44,15 @@ export interface Evento extends WordPressPost {
   acf: {
     data_inicio?: string
     data_fim?: string
+    data_evento?: string
+    hora_evento?: string
     horario?: string
     local?: string
+    local_evento?: string
     comunidade_relacionada?: number
     tipo_evento?: string
+    descricao?: string
+    inscricoes_abertas?: boolean
   }
 }
 
@@ -52,8 +62,13 @@ export interface Pastoral extends WordPressPost {
     telefone_coordenador?: string
     email_coordenador?: string
     horario_reuniao?: string
+    local_reuniao?: string
     objetivos?: string
     atividades?: string
+    descricao?: string
+    icone?: string
+    cor?: string
+    galeria?: string[]
   }
 }
 
