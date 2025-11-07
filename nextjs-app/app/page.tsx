@@ -10,6 +10,7 @@ import CommunityEngagementSection from '@/components/sections/CommunityEngagemen
 import StatsSection from '@/components/sections/StatsSection'
 import CalendarSection from '@/components/sections/CalendarSection'
 import ChaplainMessageSection from '@/components/sections/ChaplainMessageSection'
+import LiturgySection from '@/components/sections/LiturgySection'
 
 export default async function Home() {
   const [comunidades, noticias, eventos] = await Promise.all([
@@ -49,6 +50,8 @@ export default async function Home() {
       <StatsSection />
 
       <ChaplainMessageSection />
+
+      <LiturgySection />
 
       {/* Últimas Notícias */}
       <AnimatedSection delay={0.4}>
