@@ -37,7 +37,7 @@ export default function EventosCalendario({ eventos }: EventosCalendarioProps) {
   const getEventsForDate = (day: number) => {
     const date = new Date(currentYear, currentMonth, day)
     return eventos.filter(evento => {
-      const eventDate = new Date(evento.acf?.data_inicio || evento.date)
+      const eventDate = new Date(evento.acf?.data_inicio || evento.date || 0)
       return eventDate.toDateString() === date.toDateString()
     })
   }
@@ -151,7 +151,7 @@ export default function EventosCalendario({ eventos }: EventosCalendarioProps) {
             </h3>
             <div className="space-y-2 text-body">
               <p>
-                <strong>Data:</strong> {formatDateTime(selectedEvent.acf?.data_inicio || selectedEvent.date, selectedEvent.acf?.horario)}
+                <strong>Data:</strong> {formatDateTime(selectedEvent.acf?.data_inicio || selectedEvent.date || '', selectedEvent.acf?.horario)}
               </p>
               {selectedEvent.acf?.local && (
                 <p>

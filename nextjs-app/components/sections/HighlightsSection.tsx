@@ -143,7 +143,7 @@ export default function HighlightsSection({ evento, noticias }: HighlightsSectio
                         <div className="flex flex-col gap-2 text-sm">
                           <div className="text-white/70">Quando</div>
                           <div className="text-lg font-semibold text-white">
-                            {formatDateTime(evento.acf?.data_inicio || evento.date, evento.acf?.horario)}
+                            {formatDateTime(evento.acf?.data_inicio || evento.date || '', evento.acf?.horario)}
                           </div>
                           {evento.acf?.local && (
                             <>

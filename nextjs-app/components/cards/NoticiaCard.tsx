@@ -24,7 +24,7 @@ export default function NoticiaCard({ noticia }: NoticiaCardProps) {
         />
         <div className="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded">
           <span className="text-sm text-azul-profundo font-semibold">
-            {formatDate(noticia.date)}
+            {formatDate(noticia.date || '')}
           </span>
         </div>
       </div>

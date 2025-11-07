@@ -18,7 +18,7 @@ export default async function Home() {
   const eventosOrdenados = eventos
     .map((evento) => ({
       evento,
-      inicio: new Date(evento.acf?.data_inicio || evento.date),
+      inicio: new Date(evento.acf?.data_inicio || evento.date || 0),
     }))
     .filter(({ inicio }) => !Number.isNaN(inicio.getTime()))
     .sort((a, b) => a.inicio.getTime() - b.inicio.getTime())

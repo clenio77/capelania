@@ -37,7 +37,7 @@ export default function UpcomingEventsSection({ eventos }: UpcomingEventsSection
               <div className="space-y-8">
                 {proximosEventos.map((evento, index) => {
                   const imageUrl = getFeaturedImageUrl(evento) || '/images/placeholder-card.jpg'
-                  const dataFormatada = formatDateTime(evento.acf?.data_inicio || evento.date, evento.acf?.horario)
+                  const dataFormatada = formatDateTime(evento.acf?.data_inicio || evento.date || '', evento.acf?.horario)
 
                   return (
                     <Link

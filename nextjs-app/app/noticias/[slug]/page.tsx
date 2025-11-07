@@ -69,7 +69,7 @@ export default async function NoticiaPage({ params }: NoticiaPageProps) {
           <div className="mb-8">
             <h1 className="text-hero mb-4">{noticia.title.rendered}</h1>
             <div className="flex items-center text-gray-600">
-              <time dateTime={noticia.date}>{formatDate(noticia.date)}</time>
+              <time dateTime={noticia.date || ''}>{formatDate(noticia.date || '')}</time>
             </div>
           </div>
 

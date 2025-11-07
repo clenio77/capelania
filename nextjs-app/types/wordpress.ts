@@ -2,7 +2,7 @@
 
 export interface WordPressPost {
   id: number
-  date: string
+  date?: string
   slug: string
   title: {
     rendered: string
@@ -13,7 +13,7 @@ export interface WordPressPost {
   excerpt: {
     rendered: string
   }
-  featured_media: number
+  featured_media?: number
   _embedded?: {
     'wp:featuredmedia'?: Array<{
       source_url: string
@@ -53,6 +53,12 @@ export interface Evento extends WordPressPost {
     tipo_evento?: string
     descricao?: string
     inscricoes_abertas?: boolean
+    imagem_destaque?: string
+    categoria?: string
+    autor?: string
+    organizador?: string
+    vagas?: number
+    inscricao_link?: string
   }
 }
 
@@ -69,11 +75,20 @@ export interface Pastoral extends WordPressPost {
     icone?: string
     cor?: string
     galeria?: string[]
+    imagem_destaque?: string
+    contato?: string
+    missao?: string
+    como_participar?: string
   }
 }
 
 export interface Noticia extends WordPressPost {
   categories?: number[]
   tags?: number[]
+  acf?: {
+    imagem_destaque?: string
+    categoria?: string
+    autor?: string
+  }
 }
 

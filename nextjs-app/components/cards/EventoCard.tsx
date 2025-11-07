@@ -11,7 +11,7 @@ interface EventoCardProps {
 export default function EventoCard({ evento }: EventoCardProps) {
   const imageUrl = getFeaturedImageUrl(evento) || '/images/placeholder-card.jpg'
   const excerpt = getExcerpt(evento, 100)
-  const dataFormatada = formatDateTime(evento.acf?.data_inicio || evento.date, evento.acf?.horario)
+  const dataFormatada = formatDateTime(evento.acf?.data_inicio || evento.date || '', evento.acf?.horario)
 
   return (
     <Link href={`/eventos/${evento.slug}`} className="card group">

@@ -93,11 +93,11 @@ export default function PastoralClient({ pastoral }: PastoralClientProps) {
                   <h3 className="text-h4 font-semibold text-azul-profundo">Coordenação</h3>
                 </div>
                 <p className="text-body mb-3 font-semibold">{pastoral.acf.coordenador}</p>
-                {pastoral.acf?.contato && (
+                {pastoral.acf?.telefone_coordenador && (
                   <p className="text-body text-gray-600 flex items-center gap-2">
                     <Phone className="w-4 h-4 text-dourado-sacra" />
-                    <a href={`tel:${pastoral.acf.contato}`} className="hover:text-dourado-sacra">
-                      {pastoral.acf.contato}
+                    <a href={`tel:${pastoral.acf.telefone_coordenador}`} className="hover:text-dourado-sacra">
+                      {pastoral.acf.telefone_coordenador}
                     </a>
                   </p>
                 )}

@@ -5,6 +5,8 @@ import { Comunidade, Noticia, Evento, Pastoral } from '@/types/wordpress'
 export const mockComunidades: Comunidade[] = [
   {
     id: 1,
+    date: "2024-01-15T10:00:00",
+    featured_media: 0,
     slug: 'comunidade-sao-jose',
     title: { rendered: 'Comunidade São José' },
     content: { rendered: '<p>A Comunidade São José é um espaço de fé e acolhimento para militares e suas famílias. Fundada em 1985, nossa comunidade se dedica à evangelização, formação espiritual e ação social.</p><p>Realizamos celebrações semanais, grupos de oração, catequese para crianças e adultos, além de atividades recreativas e pastorais específicas.</p>' },
@@ -20,6 +22,8 @@ export const mockComunidades: Comunidade[] = [
   },
   {
     id: 2,
+    date: "2024-01-15T10:00:00",
+    featured_media: 0,
     slug: 'comunidade-nossa-senhora-aparecida',
     title: { rendered: 'Comunidade Nossa Senhora Aparecida' },
     content: { rendered: '<p>A Comunidade Nossa Senhora Aparecida é conhecida por seu trabalho missionário e evangelizador. Com mais de 30 anos de história, somos uma família unida pela fé e pelo amor ao próximo.</p><p>Oferecemos formação continuada, grupos de jovens, pastoral familiar e diversas atividades que fortalecem os laços comunitários.</p>' },
@@ -35,6 +39,8 @@ export const mockComunidades: Comunidade[] = [
   },
   {
     id: 3,
+    date: "2024-01-15T10:00:00",
+    featured_media: 0,
     slug: 'comunidade-sao-francisco',
     title: { rendered: 'Comunidade São Francisco de Assis' },
     content: { rendered: '<p>Inspirados no exemplo de São Francisco, nossa comunidade busca viver a simplicidade, a fraternidade e o cuidado com a criação. Somos uma comunidade jovem e dinâmica.</p><p>Desenvolvemos projetos sociais, grupos de música litúrgica, catequese familiar e ações ecológicas que refletem nosso carisma franciscano.</p>' },
@@ -50,6 +56,8 @@ export const mockComunidades: Comunidade[] = [
   },
   {
     id: 4,
+    date: "2024-01-15T10:00:00",
+    featured_media: 0,
     slug: 'comunidade-santa-teresinha',
     title: { rendered: 'Comunidade Santa Teresinha' },
     content: { rendered: '<p>A Comunidade Santa Teresinha é um lugar de encontro com Deus através da oração e da caridade. Seguindo o exemplo de nossa padroeira, cultivamos a vida de oração e o pequeno caminho do amor.</p><p>Oferecemos adoração ao Santíssimo, terço diário, grupos de estudo bíblico e visitação aos enfermos.</p>' },
@@ -74,6 +82,7 @@ export const mockNoticias: Noticia[] = [
     content: { rendered: '<p>Estão abertas as inscrições para o Retiro de Carnaval 2025! Este ano o tema será "Renovar a Esperança: Um Caminho de Fé e Comunhão".</p><p>O retiro acontecerá de 28 de fevereiro a 4 de março, na Casa de Retiros São José, em um ambiente de oração, reflexão e fraternidade.</p><p>Programação inclui: palestras com padres convidados, momentos de adoração, confissões, dinâmicas de grupo, caminhadas contemplativas e celebrações eucarísticas.</p><p>Investimento: R$ 350,00 (inclui hospedagem, alimentação e material). Vagas limitadas!</p>' },
     excerpt: { rendered: '<p>Inscrições abertas para o Retiro de Carnaval 2025. Tema: "Renovar a Esperança".</p>' },
     date: '2025-01-15T10:00:00',
+    featured_media: 0,
     acf: {
       imagem_destaque: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?w=800&h=600&fit=crop',
       categoria: 'Eventos',
@@ -87,6 +96,7 @@ export const mockNoticias: Noticia[] = [
     content: { rendered: '<p>Com grande alegria, anunciamos o lançamento da renovada Pastoral da Juventude da Capelania Jesus Bom Pastor!</p><p>A PJ tem como missão acompanhar os jovens em sua caminhada de fé, promovendo encontros, retiros, grupos de oração e ações sociais.</p><p>O primeiro encontro será no dia 20 de janeiro, às 19h, no salão paroquial da Comunidade São José. Todos os jovens de 15 a 29 anos estão convidados!</p><p>Venha fazer parte dessa família e descobrir o plano de Deus para sua vida!</p>' },
     excerpt: { rendered: '<p>Nova Pastoral da Juventude será lançada em janeiro. Jovens de 15 a 29 anos, participem!</p>' },
     date: '2025-01-10T14:30:00',
+    featured_media: 0,
     acf: {
       imagem_destaque: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=600&fit=crop',
       categoria: 'Pastorais',
@@ -100,6 +110,7 @@ export const mockNoticias: Noticia[] = [
     content: { rendered: '<p>A Campanha Solidária de Inverno da Capelania foi um grande sucesso! Graças à generosidade de nossa comunidade, arrecadamos mais de 500 cobertores, 300 peças de roupas de frio e 200 kg de alimentos não perecíveis.</p><p>Todo o material arrecadado foi distribuído para famílias em situação de vulnerabilidade social nas comunidades do entorno e em abrigos da cidade.</p><p>Agradecemos a todos que colaboraram com esta corrente de solidariedade. Que o Senhor abençoe cada gesto de amor!</p>' },
     excerpt: { rendered: '<p>Campanha de inverno arrecadou 500 cobertores e beneficiou dezenas de famílias.</p>' },
     date: '2025-01-05T09:00:00',
+    featured_media: 0,
     acf: {
       imagem_destaque: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&h=600&fit=crop',
       categoria: 'Ação Social',
@@ -113,6 +124,7 @@ export const mockNoticias: Noticia[] = [
     content: { rendered: '<p>Está com inscrições abertas o Curso de Formação para Catequistas 2025! O curso é destinado a todos que desejam atuar na catequese ou aprofundar seu conhecimento sobre a fé católica.</p><p>Serão 10 encontros aos sábados, das 14h às 17h, com início em 25 de janeiro. Os temas incluem: Bíblia, Doutrina, Liturgia, Pedagogia Catequética e Espiritualidade do Catequista.</p><p>Certificado reconhecido pela Diocese. Investimento: R$ 80,00 (material incluso).</p><p>Inscrições na secretaria paroquial ou pelo WhatsApp (34) 99999-9999.</p>' },
     excerpt: { rendered: '<p>Curso de formação para catequistas inicia em janeiro. Inscreva-se!</p>' },
     date: '2025-01-02T16:00:00',
+    featured_media: 0,
     acf: {
       imagem_destaque: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=600&fit=crop',
       categoria: 'Formação',
@@ -126,6 +138,7 @@ export const mockNoticias: Noticia[] = [
     content: { rendered: '<p>A Missa de Ação de Graças pelo Ano Novo, realizada no dia 1º de janeiro, reuniu centenas de fiéis em uma celebração emocionante e repleta de fé.</p><p>O Padre João Silva, em sua homilia, destacou a importância de iniciar o ano confiando na providência divina e renovando o compromisso com o Evangelho.</p><p>Após a celebração, houve confraternização com café da manhã comunitário, momento de partilha e alegria entre as famílias.</p><p>Que 2025 seja um ano de bênçãos, paz e crescimento espiritual para todos!</p>' },
     excerpt: { rendered: '<p>Missa de Ano Novo reuniu centenas de fiéis em celebração emocionante.</p>' },
     date: '2025-01-01T11:00:00',
+    featured_media: 0,
     acf: {
       imagem_destaque: 'https://images.unsplash.com/photo-1482575832494-771f74bf6857?w=800&h=600&fit=crop',
       categoria: 'Celebrações',
@@ -139,6 +152,7 @@ export const mockNoticias: Noticia[] = [
     content: { rendered: '<p>A Pastoral Familiar convida todos os casais para um encontro especial sobre "Fortalecendo o Amor no Matrimônio", que acontecerá no dia 14 de fevereiro (Dia dos Namorados), das 19h às 22h.</p><p>O encontro contará com palestra do casal Marcos e Ana Paula, que compartilharão sua experiência de 25 anos de casamento, dinâmicas de casal, momento de oração e renovação das promessas matrimoniais.</p><p>Haverá também um jantar romântico preparado especialmente para os casais. Inscrições antecipadas são necessárias.</p>' },
     excerpt: { rendered: '<p>Encontro especial para casais no Dia dos Namorados. Inscreva-se!</p>' },
     date: '2024-12-28T10:00:00',
+    featured_media: 0,
     acf: {
       imagem_destaque: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&h=600&fit=crop',
       categoria: 'Pastoral Familiar',
@@ -156,6 +170,7 @@ export const mockEventos: Evento[] = [
     content: { rendered: '<p>Celebração solene em honra ao nosso padroeiro Jesus Bom Pastor. Missa presidida pelo Bispo Diocesano, seguida de procissão e festa comunitária.</p><p>Programação: 17h - Terço e Cânticos | 18h - Missa Solene | 19h30 - Procissão | 20h - Festa com barracas, música e confraternização.</p>' },
     excerpt: { rendered: '<p>Celebração solene do padroeiro com missa, procissão e festa.</p>' },
     date: '2025-04-20T18:00:00',
+    featured_media: 0,
     acf: {
       imagem_destaque: 'https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800&h=600&fit=crop',
       data_evento: '2025-04-20',
@@ -171,6 +186,7 @@ export const mockEventos: Evento[] = [
     content: { rendered: '<p>Retiro quaresmal com o tema "Do Deserto à Ressurreição: Um Caminho de Conversão". Três dias de oração, reflexão e renovação espiritual.</p><p>Inclui: palestras, adoração ao Santíssimo, Via Sacra, confissões, dinâmicas de grupo e celebração penitencial.</p>' },
     excerpt: { rendered: '<p>Retiro de três dias para viver intensamente a Quaresma.</p>' },
     date: '2025-03-14T18:00:00',
+    featured_media: 0,
     acf: {
       imagem_destaque: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?w=800&h=600&fit=crop',
       data_evento: '2025-03-14',
@@ -186,6 +202,7 @@ export const mockEventos: Evento[] = [
     content: { rendered: '<p>Grande encontro da Pastoral da Juventude com palestras, música, testemunhos e celebração eucarística. Tema: "Jovem, Levanta-te! - Descobrindo seu chamado".</p><p>Palestrantes convidados, bandas católicas, food trucks e muito mais!</p>' },
     excerpt: { rendered: '<p>Encontro de jovens com música, palestras e celebração.</p>' },
     date: '2025-03-22T14:00:00',
+    featured_media: 0,
     acf: {
       imagem_destaque: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=600&fit=crop',
       data_evento: '2025-03-22',
@@ -201,6 +218,7 @@ export const mockEventos: Evento[] = [
     content: { rendered: '<p>A tradicional Festa Junina da Capelania está chegando! Três dias de festa com barracas típicas, quadrilha, música ao vivo, brincadeiras e muita diversão para toda a família.</p><p>Toda a renda será revertida para as obras sociais da Capelania.</p>' },
     excerpt: { rendered: '<p>Festa Junina tradicional com três dias de muita diversão.</p>' },
     date: '2025-06-20T18:00:00',
+    featured_media: 0,
     acf: {
       imagem_destaque: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&h=600&fit=crop',
       data_evento: '2025-06-20',
@@ -216,6 +234,7 @@ export const mockEventos: Evento[] = [
     content: { rendered: '<p>Caminhada ecumênica em defesa da vida, da paz e da justiça social. Concentração às 8h com café da manhã comunitário, saída às 9h.</p><p>Percurso de 5km pelas principais ruas da cidade, com paradas para reflexão e oração.</p>' },
     excerpt: { rendered: '<p>Caminhada ecumênica em defesa da vida e da paz.</p>' },
     date: '2025-05-10T08:00:00',
+    featured_media: 0,
     acf: {
       imagem_destaque: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop',
       data_evento: '2025-05-10',
@@ -230,6 +249,8 @@ export const mockEventos: Evento[] = [
 export const mockPastorais: Pastoral[] = [
   {
     id: 1,
+    date: "2024-01-15T10:00:00",
+    featured_media: 0,
     slug: 'pastoral-familiar',
     title: { rendered: 'Pastoral Familiar' },
     content: { rendered: '<p>A Pastoral Familiar acompanha as famílias em sua caminhada de fé, promovendo encontros, cursos de preparação matrimonial, grupos de casais e ações que fortalecem os vínculos familiares.</p><p>Missão: Ser presença evangelizadora junto às famílias, ajudando-as a viver o amor cristão no cotidiano.</p><p>Atividades: Encontros mensais de casais, curso de noivos, batizado de casamentos, grupos de apoio, palestras sobre educação dos filhos.</p>' },
@@ -243,6 +264,8 @@ export const mockPastorais: Pastoral[] = [
   },
   {
     id: 2,
+    date: "2024-01-15T10:00:00",
+    featured_media: 0,
     slug: 'pastoral-da-juventude',
     title: { rendered: 'Pastoral da Juventude' },
     content: { rendered: '<p>A Pastoral da Juventude é um espaço de encontro, formação e missão para jovens de 15 a 29 anos. Buscamos formar jovens protagonistas, conscientes de sua fé e comprometidos com a transformação da sociedade.</p><p>Missão: Evangelizar os jovens e com os jovens, promovendo seu crescimento humano e espiritual.</p><p>Atividades: Encontros semanais, retiros, acampamentos, ações sociais, grupos de oração, eventos culturais.</p>' },
@@ -256,6 +279,8 @@ export const mockPastorais: Pastoral[] = [
   },
   {
     id: 3,
+    date: "2024-01-15T10:00:00",
+    featured_media: 0,
     slug: 'pastoral-da-crianca',
     title: { rendered: 'Pastoral da Criança' },
     content: { rendered: '<p>A Pastoral da Criança desenvolve ações básicas de saúde, nutrição, educação e cidadania com famílias de crianças de 0 a 6 anos em situação de vulnerabilidade.</p><p>Missão: Promover o desenvolvimento integral das crianças, desde a concepção até os seis anos de idade, em seu contexto familiar e comunitário.</p><p>Atividades: Visitas domiciliares, acompanhamento do desenvolvimento infantil, orientação nutricional, celebração da vida.</p>' },
@@ -269,6 +294,8 @@ export const mockPastorais: Pastoral[] = [
   },
   {
     id: 4,
+    date: "2024-01-15T10:00:00",
+    featured_media: 0,
     slug: 'pastoral-da-caridade',
     title: { rendered: 'Pastoral da Caridade' },
     content: { rendered: '<p>A Pastoral da Caridade promove ações de solidariedade e assistência às pessoas em situação de vulnerabilidade social, vivendo o mandamento do amor ao próximo.</p><p>Missão: Ser sinal do amor de Deus através do serviço aos mais necessitados.</p><p>Atividades: Distribuição de cestas básicas, visita a enfermos, apoio a moradores de rua, campanhas solidárias, bazar beneficente.</p>' },
@@ -282,6 +309,8 @@ export const mockPastorais: Pastoral[] = [
   },
   {
     id: 5,
+    date: "2024-01-15T10:00:00",
+    featured_media: 0,
     slug: 'pastoral-liturgica',
     title: { rendered: 'Pastoral Litúrgica' },
     content: { rendered: '<p>A Pastoral Litúrgica cuida da preparação e animação das celebrações litúrgicas, promovendo a participação ativa e consciente de toda a assembleia.</p><p>Missão: Zelar pela dignidade das celebrações e formar a comunidade para uma vivência litúrgica autêntica.</p><p>Atividades: Formação de ministros, preparação de celebrações, coordenação dos coroinhas, ornamentação da igreja.</p>' },
@@ -295,6 +324,8 @@ export const mockPastorais: Pastoral[] = [
   },
   {
     id: 6,
+    date: "2024-01-15T10:00:00",
+    featured_media: 0,
     slug: 'pastoral-catequese',
     title: { rendered: 'Pastoral da Catequese' },
     content: { rendered: '<p>A Pastoral da Catequese promove a educação na fé através de processos catequéticos para crianças, adolescentes e adultos, preparando para os sacramentos.</p><p>Missão: Anunciar Jesus Cristo e formar discípulos missionários através da catequese.</p><p>Atividades: Catequese infantil, crisma, catequese de adultos, formação de catequistas, celebrações catequéticas.</p>' },

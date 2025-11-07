@@ -33,10 +33,10 @@ export default function NoticiasClient({ initialNoticias }: NoticiasClientProps)
 
     // Filtros
     if (filter === 'recent') {
-      filtered.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      filtered.sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime())
     }
     if (filter === 'older') {
-      filtered.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+      filtered.sort((a, b) => new Date(a.date || 0).getTime() - new Date(b.date || 0).getTime())
     }
 
     return filtered
@@ -95,7 +95,7 @@ export default function NoticiasClient({ initialNoticias }: NoticiasClientProps)
                     </h2>
                     <div className="flex items-center gap-3 text-sm text-white/70">
                       <span>
-                        <time dateTime={noticiaDestaque.date}>{formatDate(noticiaDestaque.date)}</time>
+                        <time dateTime={noticiaDestaque.date || ''}>{formatDate(noticiaDestaque.date || '')}</time>
                       </span>
                       <span className="h-1 w-1 rounded-full bg-white/40" aria-hidden />
                       <span>Capelania Jesus Bom Pastor</span>
