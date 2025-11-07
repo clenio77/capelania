@@ -2,25 +2,45 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { navigation } from '@/config/site'
 import { cn } from '@/lib/utils'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
+
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return pathname === '/'
+    }
+    return pathname.startsWith(href)
+  }
 
   return (
     <>
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex items-center space-x-8">
-        {navigation.map((item) => (
-          <Link
-            key={item.name}
-            href={item.href}
-            className="text-azul-profundo font-medium hover:text-dourado-sacra transition-colors duration-300"
-          >
-            {item.name}
-          </Link>
-        ))}
+      <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
+        {navigation.map((item) => {
+          const active = isActive(item.href)
+          return (
+            <Link
+              key={item.name}
+              href={item.href}
+              className={cn(
+                'relative px-3 py-2 text-sm lg:text-base font-semibold transition-all duration-300 rounded-lg',
+                active
+                  ? 'text-dourado-sacra shadow-md bg-dourado-sacra/10'
+                  : 'text-azul-profundo hover:text-dourado-sacra hover:bg-dourado-sacra/5'
+              )}
+            >
+              {item.name}
+              {active && (
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-0.5 bg-dourado-sacra rounded-full" />
+              )}
+            </Link>
+          )
+        })}
       </nav>
 
       {/* Mobile Menu Button */}
@@ -57,16 +77,24 @@ export default function Navigation() {
         )}
       >
         <nav className="flex flex-col items-center justify-center h-full space-y-8">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-2xl text-azul-profundo font-medium hover:text-dourado-sacra transition-colors duration-300"
-              onClick={() => setIsOpen(false)}
-            >
-              {item.name}
-            </Link>
-          ))}
+          {navigation.map((item) => {
+            const active = isActive(item.href)
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={cn(
+                  'text-2xl font-semibold transition-all duration-300 px-6 py-3 rounded-xl',
+                  active
+                    ? 'text-dourado-sacra shadow-lg bg-dourado-sacra/10'
+                    : 'text-azul-profundo hover:text-dourado-sacra hover:bg-dourado-sacra/5'
+                )}
+                onClick={() => setIsOpen(false)}
+              >
+                {item.name}
+              </Link>
+            )
+          })}
         </nav>
       </div>
     </>
