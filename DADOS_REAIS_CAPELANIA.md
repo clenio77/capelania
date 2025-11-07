@@ -32,38 +32,38 @@
 ## 🏛️ Comunidades
 
 ### Comunidade 1
-- **Nome**: 
-- **Padroeiro**: 
-- **Endereço**: 
+- **Nome**: São Lucas
+- **Padroeiro**: São lucas
+- **Endereço**: Alameda Paulo César Santana, 1135
 - **Horários de Missa**: 
-- **Responsável**: 
+- **Responsável**: Padre Handley
 - **Telefone**: 
 - **Foto/Banner**: 
 
 ### Comunidade 2
-- **Nome**: 
-- **Padroeiro**: 
-- **Endereço**: 
-- **Horários de Missa**: 
-- **Responsável**: 
+- **Nome**: Santo Expedito
+- **Padroeiro**: Santo Expedito
+- **Endereço**: Alameda Deocleciano Martins, 55 
+- **Horários de Missa**: Todo domingo às 07:30 da manha
+- **Responsável**: Padre Handley
 - **Telefone**: 
 - **Foto/Banner**: 
 
 ### Comunidade 3
-- **Nome**: 
-- **Padroeiro**: 
-- **Endereço**: 
+- **Nome**: Nossa Senhora de Fátima
+- **Padroeiro**: Nossa Senhora de Fátima
+- **Endereço**: Assentamento Tangará
 - **Horários de Missa**: 
 - **Responsável**: 
 - **Telefone**: 
 - **Foto/Banner**: 
 
 ### Comunidade 4
-- **Nome**: 
-- **Padroeiro**: 
-- **Endereço**: 
+- **Nome**: Nossa Senhora Aparecida
+- **Padroeiro**: Nossa Senhora Aparecida
+- **Endereço**: Assentamento Tangará
 - **Horários de Missa**: 
-- **Responsável**: 
+- **Responsável**: Padre Handley
 - **Telefone**: 
 - **Foto/Banner**: 
 
@@ -72,12 +72,12 @@
 ## 📅 Próximos Eventos Reais
 
 ### Evento 1
-- **Nome**: 
-- **Data**: 
-- **Horário**: 
-- **Local**: 
-- **Descrição**: 
-- **Inscrições**: 
+- **Nome**: Galinhada
+- **Data**: 09/11/2025
+- **Horário**: 11:00 da manha
+- **Local**: Seminário São José
+- **Descrição**: Galinhada em benefício do acabamento da igreja
+- **Inscrições**: 15,00 o ingresso
 
 ### Evento 2
 - **Nome**: 
@@ -170,19 +170,19 @@
 
 ### Posts Recentes para usar no site
 1. **Post 1**
-   - URL: 
-   - Descrição: 
-   - Data: 
+   - URL: https://www.instagram.com/capelaniajesusbompastor/reel/DQuBk1wDDCl/
+   - Descrição: Convite para a galinha do dia 09/11/2025
+   - Data: 06/11/2025
 
 2. **Post 2**
-   - URL: 
-   - Descrição: 
-   - Data: 
+   - URL: https://www.instagram.com/capelaniajesusbompastor/p/DPzZ88EDqLx/
+   - Descrição: Encontro das familias
+   - Data: 19/10/2025
 
 3. **Post 3**
-   - URL: 
-   - Descrição: 
-   - Data: 
+   - URL: https://www.instagram.com/capelaniajesusbompastor/p/DPezQ8tDspF/
+   - Descrição: Costelada
+   - Data: 15/10/2025
 
 ---
 
