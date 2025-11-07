@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { navigation } from '@/config/site'
@@ -8,9 +8,15 @@ import { cn } from '@/lib/utils'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
 
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const isActive = (href: string) => {
+    if (!mounted) return false
     if (href === '/') {
       return pathname === '/'
     }
