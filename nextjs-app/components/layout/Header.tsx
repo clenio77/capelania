@@ -4,7 +4,7 @@ import Navigation from './Navigation'
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm backdrop-blur-sm bg-white/95">
+    <header className="sticky top-0 z-50 bg-white shadow-md backdrop-blur-sm bg-white/98 border-b-2 border-dourado-sacra/30">
       <div className="container-custom">
         <div className="flex items-center justify-between h-20 py-2">
           <Link href="/" className="flex items-center gap-3 md:gap-4 group h-full">
